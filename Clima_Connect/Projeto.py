@@ -22,8 +22,8 @@ sender_email = 'climaconnectremetente@outlook.com'
 receiver_email = 'climaconnectremetente@outlook.com'
 
 # Números fictícios (substitua pelos números reais)
-seu_numero = "+5555991160246"
-numero_destino = "+5555991327746"
+seu_numero = "+5555991667802"
+numero_destino = "+5555991667802"
 
 # Mensagem a ser enviada
 mensagem_whatsapp = "Banco sem Sinal"
