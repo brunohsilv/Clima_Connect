@@ -33,3 +33,28 @@ Time: 19:45
 Phone Number: +5555991327746
 Message: Banco sem Sinal
 --------------------
+Date: 10/12/2023
+Time: 17:27
+Phone Number: +5555991667802
+Message: Banco sem Sinal
+--------------------
+Date: 10/12/2023
+Time: 17:40
+Phone Number: +5555991667802
+Message: Banco sem Sinal
+--------------------
+Date: 10/12/2023
+Time: 17:44
+Phone Number: +5555991667802
+Message: Banco sem Sinal
+--------------------
+Date: 10/12/2023
+Time: 17:54
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
+Date: 10/12/2023
+Time: 18:3
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
