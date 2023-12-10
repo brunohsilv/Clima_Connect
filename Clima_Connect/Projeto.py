@@ -16,14 +16,14 @@ password = 'fwe43f34S&2'
 # Informações para o e-mail
 smtp_server = 'smtp.office365.com'
 smtp_port = 587
-smtp_username = 'email_do_remetente_tem_que_ser_outlook'
-smtp_password = 'senha_do_email_do_remetente'
-sender_email = 'email_do_remetente_tem_que_ser_outlook'
-receiver_email = 'email_do_destinatario'
+smtp_username = 'climaconnectremetente@outlook.com'
+smtp_password = 'gTV@85qL'
+sender_email = 'climaconnectremetente@outlook.com'
+receiver_email = 'climaconnectremetente@outlook.com'
 
 # Números fictícios (substitua pelos números reais)
 seu_numero = "+5555991160246"
-numero_destino = "+5555991844457"
+numero_destino = "+5555991327746"
 
 # Mensagem a ser enviada
 mensagem_whatsapp = "Banco sem Sinal"
