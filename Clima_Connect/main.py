@@ -89,3 +89,13 @@ if tempo_passado > 0.10:
     msg_whatsapp = f"Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo."
     kit.sendwhatmsg_instantly(numero_destino, msg_whatsapp)
     print("Mensagem de WhatsApp enviada!")
+
+# Conectar ao banco de dados PostgreSQL
+try:
+    conn_postgresql = connect_to_postgresql('200.17.86.20', 55432, 'santa_rosa', 'gustavo.drews@sou.unijui.edu.br', 'fwe43f34S&2')
+
+    if conn_postgresql:
+        print("Conexão ao PostgreSQL bem-sucedida!")
+
+except Exception as e:
+    print(f"Erro ao conectar ao PostgreSQL: {e}")

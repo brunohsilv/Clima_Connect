@@ -58,3 +58,13 @@ Time: 18:3
 Phone Number: +5555991667802
 Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
 --------------------
+Date: 10/12/2023
+Time: 19:56
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
+Date: 10/12/2023
+Time: 20:0
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
