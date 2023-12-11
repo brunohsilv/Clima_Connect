@@ -8,8 +8,8 @@ from rethinkdb import RethinkDB
 r = RethinkDB()
 
 # Função para enviar e-mail
-def send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, db_type):
-    msg = MIMEText(f"Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados {db_type}, verifique se o mesmo está ativo.")
+def send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, message):
+    msg = MIMEText(message)
     msg['Subject'] = 'Alerta de Monitoramento de Banco de Dados'
     msg['From'] = sender_email
     msg['To'] = receiver_email
@@ -65,7 +65,7 @@ try:
                     print(f"Desconectado! Tempo: {tempo_passado:.2f} segundos")
 
                     # Enviar e-mail se o tempo for maior que 0.10 segundos
-                    send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "RethinkDB")
+                    send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.")
 
                     break
                 else:
@@ -112,7 +112,7 @@ try:
                 print("Não houve novos registros na tabela nit2xli nos últimos 2 minutos! Enviando e-mail e mensagem por WhatsApp...")
 
                 # Enviar e-mail
-                send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "Postgre - Tabela: nit2xli")
+                send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente.")
 
                 # Enviar mensagem por WhatsApp
                 msg_whatsapp_nit2xli = (
@@ -135,16 +135,16 @@ try:
             cursor_k72623_lo.close()
 
             # Verificar se passaram mais de 20 minutos desde o último registro na tabela k72623_lo
-            if ultimo_registro_k72623_lo and (time.time() - ultimo_registro_k72623_lo.timestamp()) > 1200:  # 1200 segundos = 20 minutos
+            if ultimo_registro_k72623_lo and (time.time() - ultimo_registro_k72623_lo.timestamp()) > 100:  # 1200 segundos = 20 minutos
                 print("Não houve novos registros na tabela k72623_lo nos últimos 20 minutos! Enviando e-mail e mensagem por WhatsApp...")
 
                 # Enviar e-mail
-                send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "Postgre - Tabela: k72623_lo")
+                send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "Prezado cliente, o último registro na tabela k72623_lo do seu banco de dados PostgreSQL foi adicionado há mais de 20 minutos. Verifique o status e a integridade dos dados no dispositivo de Micropartículas da Rótula do Tafarel.")
 
                 # Enviar mensagem por WhatsApp
                 msg_whatsapp_k72623_lo = (
                     f"Prezado cliente, o último registro na tabela k72623_lo do seu banco de dados PostgreSQL foi adicionado há mais de 20 minutos."
-                    " Verifique o status e a integridade dos dados no dispositivo de Micropartículas da Rótula do Tafarel"
+                    " Verifique o status e a integridade dos dados no dispositivo de Micropartículas da Rótula do Tafarel."
                 )
                 kit.sendwhatmsg_instantly(numero_destino, msg_whatsapp_k72623_lo)
                 print("E-mail e mensagem de WhatsApp enviados! - Postgre k72623_lo")

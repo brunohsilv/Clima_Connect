@@ -123,3 +123,38 @@ Time: 22:17
 Phone Number: +5555991667802
 Message: Prezado cliente, o último registro na tabela k72623_lo do seu banco de dados PostgreSQL foi adicionado há mais de 20 minutos. Verifique o status e a integridade dos dados no dispositivo de Micropartículas da Rótula do Tafarel
 --------------------
+Date: 10/12/2023
+Time: 22:34
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
+Date: 10/12/2023
+Time: 22:34
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
+Date: 10/12/2023
+Time: 22:34
+Phone Number: +5555991667802
+Message: Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente.
+--------------------
+Date: 10/12/2023
+Time: 22:38
+Phone Number: +5555991667802
+Message: Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente.
+--------------------
+Date: 10/12/2023
+Time: 22:43
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
+Date: 10/12/2023
+Time: 22:44
+Phone Number: +5555991667802
+Message: Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente.
+--------------------
+Date: 10/12/2023
+Time: 22:46
+Phone Number: +5555991667802
+Message: Prezado cliente, o último registro na tabela k72623_lo do seu banco de dados PostgreSQL foi adicionado há mais de 20 minutos. Verifique o status e a integridade dos dados no dispositivo de Micropartículas da Rótula do Tafarel.
+--------------------
