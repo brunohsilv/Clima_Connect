@@ -92,10 +92,37 @@ if tempo_passado > 0.10:
 
 # Conectar ao banco de dados PostgreSQL
 try:
-    conn_postgresql = connect_to_postgresql('200.17.86.20', 55432, 'santa_rosa', 'gustavo.drews@sou.unijui.edu.br', 'fwe43f34S&2')
+    conn_postgresql = connect_to_postgresql('200.17.86.20', '55432', 'santa_rosa', 'gustavo.drews@sou.unijui.edu.br', 'fwe43f34S&2')
 
     if conn_postgresql:
         print("Conexão ao PostgreSQL bem-sucedida!")
+
+        while True:
+            # Criar um cursor
+            cursor = conn_postgresql.cursor()
+
+            # Consulta para verificar o último registro na coluna "time"
+            cursor.execute("SELECT MAX(time) FROM nit2xli")
+            ultimo_registro = cursor.fetchone()[0]
+
+            cursor.close()
+
+            # Verificar se passaram mais de 2 minutos desde o último registro
+            if ultimo_registro and (time.time() - ultimo_registro.timestamp()) > 120:  # 120 segundos = 2 minutos
+                print("Não houve novos registros nos últimos 2 minutos! Enviando e-mail e mensagem por WhatsApp...")
+
+                # Enviar e-mail
+                send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "Postgre - Tabela: nit2xli")
+
+                # Enviar mensagem por WhatsApp
+                msg_whatsapp = (
+                 f"Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. "
+                "Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente."
+                )
+                kit.sendwhatmsg_instantly(numero_destino, msg_whatsapp)
+                print("E-mail e mensagem de WhatsApp enviados! - Postgre nit2xli")
+            # Aguardar 2 minutos antes da próxima verificação
+            time.sleep(120)
 
 except Exception as e:
     print(f"Erro ao conectar ao PostgreSQL: {e}")
