@@ -98,31 +98,59 @@ try:
         print("Conexão ao PostgreSQL bem-sucedida!")
 
         while True:
-            # Criar um cursor
-            cursor = conn_postgresql.cursor()
+            # Criar um cursor para a tabela nit2xli
+            cursor_nit2xli = conn_postgresql.cursor()
 
-            # Consulta para verificar o último registro na coluna "time"
-            cursor.execute("SELECT MAX(time) FROM nit2xli")
-            ultimo_registro = cursor.fetchone()[0]
+            # Consulta para verificar o último registro na coluna "time" da tabela nit2xli
+            cursor_nit2xli.execute("SELECT MAX(time) FROM nit2xli")
+            ultimo_registro_nit2xli = cursor_nit2xli.fetchone()[0]
 
-            cursor.close()
+            cursor_nit2xli.close()
 
-            # Verificar se passaram mais de 2 minutos desde o último registro
-            if ultimo_registro and (time.time() - ultimo_registro.timestamp()) > 120:  # 120 segundos = 2 minutos
-                print("Não houve novos registros nos últimos 2 minutos! Enviando e-mail e mensagem por WhatsApp...")
+            # Verificar se passaram mais de 2 minutos desde o último registro na tabela nit2xli
+            if ultimo_registro_nit2xli and (time.time() - ultimo_registro_nit2xli.timestamp()) > 120:  # 120 segundos = 2 minutos
+                print("Não houve novos registros na tabela nit2xli nos últimos 2 minutos! Enviando e-mail e mensagem por WhatsApp...")
 
                 # Enviar e-mail
                 send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "Postgre - Tabela: nit2xli")
 
                 # Enviar mensagem por WhatsApp
-                msg_whatsapp = (
-                 f"Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. "
-                "Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente."
+                msg_whatsapp_nit2xli = (
+                    f"Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. "
+                    "Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente."
                 )
-                kit.sendwhatmsg_instantly(numero_destino, msg_whatsapp)
+                kit.sendwhatmsg_instantly(numero_destino, msg_whatsapp_nit2xli)
                 print("E-mail e mensagem de WhatsApp enviados! - Postgre nit2xli")
+
             # Aguardar 2 minutos antes da próxima verificação
             time.sleep(120)
+
+            # Criar um cursor para a tabela k72623_lo
+            cursor_k72623_lo = conn_postgresql.cursor()
+
+            # Consulta para verificar o último registro na coluna "time" da tabela k72623_lo
+            cursor_k72623_lo.execute("SELECT MAX(time) FROM k72623_lo")
+            ultimo_registro_k72623_lo = cursor_k72623_lo.fetchone()[0]
+
+            cursor_k72623_lo.close()
+
+            # Verificar se passaram mais de 20 minutos desde o último registro na tabela k72623_lo
+            if ultimo_registro_k72623_lo and (time.time() - ultimo_registro_k72623_lo.timestamp()) > 1200:  # 1200 segundos = 20 minutos
+                print("Não houve novos registros na tabela k72623_lo nos últimos 20 minutos! Enviando e-mail e mensagem por WhatsApp...")
+
+                # Enviar e-mail
+                send_email(sender_email, receiver_email, smtp_server, smtp_port, smtp_username, smtp_password, "Postgre - Tabela: k72623_lo")
+
+                # Enviar mensagem por WhatsApp
+                msg_whatsapp_k72623_lo = (
+                    f"Prezado cliente, o último registro na tabela k72623_lo do seu banco de dados PostgreSQL foi adicionado há mais de 20 minutos."
+                    " Verifique o status e a integridade dos dados no dispositivo de Micropartículas da Rótula do Tafarel"
+                )
+                kit.sendwhatmsg_instantly(numero_destino, msg_whatsapp_k72623_lo)
+                print("E-mail e mensagem de WhatsApp enviados! - Postgre k72623_lo")
+
+            # Aguardar 15 minutos antes da próxima verificação
+            time.sleep(100)
 
 except Exception as e:
     print(f"Erro ao conectar ao PostgreSQL: {e}")
