@@ -228,3 +228,33 @@ Time: 22:23
 Phone Number: +5555991667802
 Message: Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente.
 --------------------
+Date: 11/12/2023
+Time: 22:35
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
+Date: 11/12/2023
+Time: 22:35
+Phone Number: +5555991667802
+Message: Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente.
+--------------------
+Date: 11/12/2023
+Time: 22:52
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
+Date: 11/12/2023
+Time: 22:53
+Phone Number: +5555991667802
+Message: Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente.
+--------------------
+Date: 11/12/2023
+Time: 23:33
+Phone Number: +5555991667802
+Message: Prezado cliente, nosso monitoramento não recebeu nenhum sinal sobre o seu banco de dados RethinkDB, verifique se o mesmo está ativo.
+--------------------
+Date: 11/12/2023
+Time: 23:34
+Phone Number: +5555991667802
+Message: Prezado cliente, não foram encontrados novos registros na tabela nit2xli do seu banco de dados PostgreSQL nos últimos 2 minutos. Verifique se as estações Unijuí, Aeroporto e Cruzeiro estão funcionando corretamente.
+--------------------
